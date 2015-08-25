@@ -12,17 +12,76 @@
 <body>
 <nav class="redMainNav">
     <div class="center">
-        <img src="img/bitlox.png" alt="bitlox logo"/>
-        <div class="web">web</div>
+        <img src="img/bitlox.png" alt="bitlox logo"/><div class="web">web</div>
     </div>
 </nav>
 <div class="content center">
- <div class="leftside">
-
- </div>
-    <div class="rightside">
-
+    <div class="leftside">
+        <h4>My wallets</h4>
+        <div class="splitline"></div>
+        <ul class="waletslist">
+            <li><span class="wallName">Wallet 1</span><div class="icons"><i class="edit"></i><i class="lock"></i></div></li>
+            <li><span class="wallName">Wallet 2</span><div class="icons"><i class="edit"></i><i class="lock"></i></div></li>
+            <li><span class="wallName">Wallet 3</span><div class="icons"><i class="edit"></i><i class="lock"></i></div></li>
+        </ul>
+        <button class="addWallet">+ Add wallet</button>
     </div>
+    <div class="rightside">
+        <h4>Actions</h4>
+        <div class="splitline"></div>
+        <nav class="actions">
+            <button><i class="send"></i>Send</button>
+            <button><i class="receive"></i>Receive</button>
+            <button><i class="transactions"></i>Transactions</button>
+        </nav>
+        <div class="tap">
+            <div class="bordered">
+                <strong>Wallet name</strong> (balance)
+                <i class="refresh"></i>
+                <select name="curency" class="currencyCalc">
+                    <option value="EUR"></option>
+                    <option value="USD"></option>
+                    <option value="POUNDS"></option>
+                </select>
+                <div class="downpart sendTab">
+                    <div class="line">
+                        <label for="raddr">Receiver's address</label>
+                        <div class="qrBg">
+                            <input type="text" id="raddr"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <label for="amount">Amount</label>
+                        <span class="btcBg">
+                            <input type="text" id="amount"/>
+                        </span>
+                        =
+                        <span class="exchangeText">
+                            <select name="curency" class="currencyCalc">
+                                <option value="EUR"></option>
+                                <option value="USD"></option>
+                                <option value="POUNDS"></option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="smallLine">
+                        <span class="fl">Transaction fee (0.5%)</span>
+                        <span class="fr">0.00001 BTC ($ 0.1)</span>
+                    </div>
+                    <div class="smallLine">
+                        <span class="fl strong">Total</span>
+                        <span class="fr strong">0.00011 BTC ($ 11)</span>
+                    </div>
+                    <div class="splitline"></div>
+                    <button class="sendCoins"><i class="send"></i>SEND</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <i class="clear"></i>
 </div>
 <footer class="loadPlugin">
     <div class="center">

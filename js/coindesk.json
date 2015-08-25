@@ -1,3 +1,5 @@
+// GET: http://api.coindesk.com/v1/bpi/currentprice.json
+
 {
   "time":
   { "updated":"Aug 25, 2015 14:30:00 UTC",
@@ -29,3 +31,4 @@
     }
   }
 }
+

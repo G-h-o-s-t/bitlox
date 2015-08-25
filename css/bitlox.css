@@ -20,6 +20,7 @@ body{  background-color: rgba(42, 42, 42, 1); color: #fff;}
 .content{ text-align: center; }
 .content h1{ font-size: 28px; font-weight: normal; padding-bottom: 20px; }
 .actionImg{ padding: 42px 0; }
+i.clear{ display: block; height: 0px; clear: both;}
 nav .center{ padding: 10px 0 0 0; }
 .web{font-size: .8em;color: #fff; margin-left: 21px; }
 h1{ font-weight: normal; }
@@ -27,4 +28,6 @@ h1{ font-weight: normal; }
 .buttonsLine{ font-size: 14px;}
 .loadPlugin{ position: fixed; bottom: 0; font-size: 14px; color: #959595; width: 100%; padding-bottom: 20px; }
 
-.leftside
+.leftside{ float: left; width: 341px;}
+.rightside{ float: right; width: 581px;}
+.splitline{ width: 100%; height: 0px; border-bottom: 1px solid #E7393F; }
