@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>BitLox Web</title>
+    <link href="css/fonts.css" media="screen" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link href="css/bitlox.css" media="screen" rel="stylesheet">
+    <link href="img/favicon.ico" id="page_favicon" rel="icon" type="image/x-icon">
+    <script src="js/detectPlugin.js"></script>
+</head>
+<body>
+<nav class="redMainNav">
+    <div class="center">
+        <img src="img/bitlox.png" alt="bitlox logo"/>
+        <div class="web">web</div>
+    </div>
+</nav>
+<div class="content center">
+ <div class="leftside">
+
+ </div>
+    <div class="rightside">
+
+    </div>
+</div>
+<footer class="loadPlugin">
+    <div class="center">
+        <div class="fl">© 2015 Bitlox™ — The ONLY Bluetooth Bitcoin Wallet</div>
+        <div class="fr">Safest, wireless, powered!</div>
+    </div>
+</footer>
+<iframe id="invisible" style="display:none;"></iframe>
+<script type="text/javascript">
+function getFile(apple) {
+    var iframe = document.getElementById('invisible');
+    iframe.src = apple?"files/bitlox_plugin.dmg":"files/hidapiBrowserPlugin.msi";
+}
+</script>
+</body>
+</html>

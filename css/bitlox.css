@@ -1,0 +1,30 @@
+html,body,div,span,
+applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+dd,dl,dt,li,ol,ul,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td{margin: 0; padding: 0; border: 0;}
+table {border-collapse: collapse; border-spacing: 0;}
+ol,ul {list-style: none; }
+.fl{ float: left; }
+.fr{ float: right; }
+q:before,q:after,blockquote:before,blockquote:after {content: "";}
+html{ font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; font-family:'Roboto'; }
+body{  background-color: rgba(42, 42, 42, 1); color: #fff;}
+.download{ display: block; height: 42px; line-height: 21px; background: rgba(231,57,63,1); border: 0; color: #fff; display: inline-block; border-radius: 5px; font-size: 14px; padding: 0 20px; margin: 0 34px; cursor: pointer; outline:none; }
+.redMainNav{ background: rgba(231,57,63,1); height: 63px; text-align: left; }
+.center{ width: 940px; margin: auto; }
+.content{ text-align: center; }
+.content h1{ font-size: 28px; font-weight: normal; padding-bottom: 20px; }
+.actionImg{ padding: 42px 0; }
+nav .center{ padding: 10px 0 0 0; }
+.web{font-size: .8em;color: #fff; margin-left: 21px; }
+h1{ font-weight: normal; }
+.smallCenter{ width: 400px; margin: auto; font-size: 14px; line-height: 21px;}
+.buttonsLine{ font-size: 14px;}
+.loadPlugin{ position: fixed; bottom: 0; font-size: 14px; color: #959595; width: 100%; padding-bottom: 20px; }
+
+.leftside
