@@ -5,6 +5,7 @@
     <title>BitLox Web</title>
     <link href="css/fonts.css" media="screen" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.css" media="screen" rel="stylesheet">
     <link href="css/bitlox.css" media="screen" rel="stylesheet">
     <link href="img/favicon.ico" id="page_favicon" rel="icon" type="image/x-icon">
     <script src="js/detectPlugin.js"></script>
@@ -17,68 +18,131 @@
 </nav>
 <div class="content center">
     <div class="leftside">
-        <h4>My wallets</h4>
+        <h4 class="topH">My wallets</h4>
         <div class="splitline"></div>
         <ul class="waletslist">
-            <li><span class="wallName">Wallet 1</span><div class="icons"><i class="edit"></i><i class="lock"></i></div></li>
-            <li><span class="wallName">Wallet 2</span><div class="icons"><i class="edit"></i><i class="lock"></i></div></li>
-            <li><span class="wallName">Wallet 3</span><div class="icons"><i class="edit"></i><i class="lock"></i></div></li>
+            <li><span class="wallName">Wallet 1</span><div class="icons"><i class="lock"></i><i class="edit"></i></div></li>
+            <li class="selected"><span class="wallName">Wallet 2</span><div class="icons"><i class="lock"></i><i class="edit"></i></div></li>
+            <li><span class="wallName">Wallet 3</span><div class="icons"><i class="lock"></i><i class="edit"></i></div></li>
         </ul>
         <button class="addWallet">+ Add wallet</button>
     </div>
     <div class="rightside">
-        <h4>Actions</h4>
+        <h4 class="topH">Actions</h4>
         <div class="splitline"></div>
-        <nav class="actions">
-            <button><i class="send"></i>Send</button>
-            <button><i class="receive"></i>Receive</button>
-            <button><i class="transactions"></i>Transactions</button>
+        <div class="zgl hide">
+            <img src="img/u35.png" alt="select wallet from list"/>
+            <div class="redcenterText">Select wallet from list</div>
+        </div>
+        <nav class="actions hide)">
+            <button class="active"><i></i>Send</button>
+            <button><i></i>Receive</button>
+            <button><i></i>Transactions</button>
         </nav>
-        <div class="tap">
+        <div class="tap hide)">
             <div class="bordered">
                 <strong>Wallet name</strong> (balance)
-                <i class="refresh"></i>
-                <select name="curency" class="currencyCalc">
-                    <option value="EUR"></option>
-                    <option value="USD"></option>
-                    <option value="POUNDS"></option>
-                </select>
-                <div class="downpart sendTab">
-                    <div class="line">
-                        <label for="raddr">Receiver's address</label>
-                        <div class="qrBg">
-                            <input type="text" id="raddr"/>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <label for="amount">Amount</label>
-                        <span class="btcBg">
-                            <input type="text" id="amount"/>
-                        </span>
-                        =
-                        <span class="exchangeText">
-                            <select name="curency" class="currencyCalc">
-                                <option value="EUR"></option>
-                                <option value="USD"></option>
-                                <option value="POUNDS"></option>
-                            </select>
-                        </span>
-                    </div>
+                <div class="fr">
+                    <i class="refresh"></i>
+                    <span class="walletballance">12.0012521</span>
+                    <select name="currency" class="currencySelect">
+                        <option selected="selected" value="BTC">BTC</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="RUB">RUB</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="downpart sendTab hide">
+                <div class="line">
+                    <label for="raddr">Receiver's address</label>
+                    <input type="text" id="raddr"/>
+                    <i class="qr"></i>
+                </div>
+                <div class="line">
+                    <label for="amount">Amount</label>
+                    <span class="btcBg">
+                        <input type="text" id="amount"/>
+                    </span>
+                    =
+                    <span class="exchangeText">
+                        <input type="text" id="convertedSumm"/>
+                        <select name="currency" class="currencySelect" id="curExchange">
+                            <option selected="selected" value="BTC">BTC</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="RUB">RUB</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="wrapMargin">
                     <div class="smallLine">
                         <span class="fl">Transaction fee (0.5%)</span>
                         <span class="fr">0.00001 BTC ($ 0.1)</span>
+                        <i class="clear"></i>
                     </div>
                     <div class="smallLine">
                         <span class="fl strong">Total</span>
                         <span class="fr strong">0.00011 BTC ($ 11)</span>
+                        <i class="clear"></i>
                     </div>
-                    <div class="splitline"></div>
-                    <button class="sendCoins"><i class="send"></i>SEND</button>
+                </div>
+                <div class="splitline"></div>
+                <button class="sendCoins"><i></i>SEND</button>
+            </div>
+            <div class="downpart receiveTab hide">
+                <h4>My address</h4>
+                <div class="splitlineWhite"></div>
+                <div class="sendLine">
+                    <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span><i class="qrIco"></i>
+                </div>
+                <div class="sendLine">
+                    <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span><i class="qrIco"></i>
+                </div>
+                <div class="sendLine">
+                    <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span><i class="qrIco"></i>
+                </div>
+                <div class="splitlineWhite"></div>
+                <a href="#" class=" fr createAdress">+ Create address</a>
+                <i class="clear"></i>
+            </div>
+            <div class="downpart transactions hide)">
+                <div class="heading">
+                    <span class="tabHead fl">Time</span>
+                    <span class="tabHead fl">Address</span>
+                    <span class="tabHead fl">Amount</span>
+                    <span class="tabHead fl">Balance</span>
+                    <i class="clear"></i>
+                </div>
+                <div class="splitlineWhite"></div>
+                <div class="tableLine red">
+                    <span class="col1 fl">2015-07-03 21:43:50</span>
+                    <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
+                    <span class="col3 fl">-0.0000012</span>
+                    <span class="col4 fl">1.0000012</span>
+                    <i class="clear"></i>
+                </div>
+                <div class="tableLine green">
+                    <span class="col1 fl">2015-07-03 21:43:50</span>
+                    <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
+                    <span class="col3 fl">-0.0000012</span>
+                    <span class="col4 fl">1.0000012</span>
+                    <i class="clear"></i>
+                </div>
+                <div class="tableLine red">
+                    <span class="col1 fl">2015-07-03 21:43:50</span>
+                    <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
+                    <span class="col3 fl">-0.0000012</span>
+                    <span class="col4 fl">1.0000012</span>
+                    <i class="clear"></i>
                 </div>
 
+                <!--<button class="createAdress">+ Create address</button>-->
+                <i class="clear"></i>
             </div>
-
-
         </div>
     </div>
     <i class="clear"></i>
@@ -89,6 +153,51 @@
         <div class="fr">Safest, wireless, powered!</div>
     </div>
 </footer>
+<!-- popUps -->
+<div class="popup qrPopUp hide">
+    <div class="shade"></div>
+    <div class="wrap">
+        <img id="u102_img" class="img " src="http://d2v8ggac1o0f6z.cloudfront.net/gsc/6PYWIN/2e/25/f7/2e25f748ee0c4558b73519b792a6bc81/images/home/u102.png?token=ea462e936ff591b4465f1b700b84306c">
+        <div>
+            <input type="text" class="qrLink" value="http://dxlfb468n8ekd.cloudfront.net/gsc/6PYWIN/2e/25/f7/2e25f748ee0c4558b73519b792a6bc81/http:\\www.bitlox.io\username\link2qrcode.png?token=2cd2bdb80d674db6f01fedc1da7fbe52"/>
+        </div>
+    </div>
+</div>
+
+<div class="popup qrCam hide">
+    <div class="shade"></div>
+    <div class="wrap">
+        <div id="camplace"></div>
+        <div class="camtext">Hold a picture of the QR code <br/>up to your computer’s web cam</div>
+    </div>
+</div>
+
+<div class="popup editWallet hide">
+    <div class="shade"></div>
+    <div class="wrap">
+        <h3>Edit wallet</h3>
+        <div class="slitline"></div>
+        <div class="popUpline">
+            <label for="walName">Wallet name</label>
+            <input type="text" id="walName" value="Wallet name"/>
+        </div>
+        <div class="popUpline">
+            <label for="lockWall">Lock wallet</label>
+            <input type="checkbox" id="lockWall"/>
+        </div>
+        <div class="popUpline">
+            <label for="lockWall">PIN</label>
+            <input type="password" id="wallPin"/>
+        </div>
+        <div class="popUpline">
+            <label for="wallPin2">Confirm PIN</label>
+            <input type="password" id="wallPin2"/>
+        </div>
+        <a href="#" class="delWallet fl">Delete wallet</a>
+        <button class="Save"><i class="save"></i>Save</button>
+    </div>
+</div>
+
 <iframe id="invisible" style="display:none;"></iframe>
 <script type="text/javascript">
 function getFile(apple) {

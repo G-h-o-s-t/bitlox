@@ -13,7 +13,8 @@ ol,ul {list-style: none; }
 .fr{ float: right; }
 q:before,q:after,blockquote:before,blockquote:after {content: "";}
 html{ font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 1.1em; font-family:'Roboto'; }
-body{  background-color: rgba(42, 42, 42, 1); color: #fff;}
+body{  background-color: #2A2A2A; color: #fff;}
+.hide{ display: none;}
 .download{ display: block; height: 42px; line-height: 21px; background: rgba(231,57,63,1); border: 0; color: #fff; display: inline-block; border-radius: 5px; font-size: 14px; padding: 0 20px; margin: 0 34px; cursor: pointer; outline:none; }
 .redMainNav{ background: rgba(231,57,63,1); height: 63px; text-align: left; }
 .center{ width: 940px; margin: auto; }
@@ -28,6 +29,61 @@ h1{ font-weight: normal; }
 .buttonsLine{ font-size: 14px;}
 .loadPlugin{ position: fixed; bottom: 0; font-size: 14px; color: #959595; width: 100%; padding-bottom: 20px; }
 
-.leftside{ float: left; width: 341px;}
-.rightside{ float: right; width: 581px;}
+.leftside{ float: left; width: 341px; text-align: left;}
+.rightside{ float: right; width: 581px; text-align: left;}
 .splitline{ width: 100%; height: 0px; border-bottom: 1px solid #E7393F; }
+.splitlineWhite{width: 100%; height: 0px; border-bottom: 1px solid #fff;}
+h4.topH{ margin: 30px 0 17px;   font-weight: 700;font-style: normal;color: #E7393F; }
+.waletslist li{ display: block; text-align: left; width:340px; height: 42px; line-height: 42px;}
+.waletslist li:hover, .waletslist li.selected{ background: url(../img/walletHover.png) 0 0 no-repeat;cursor: pointer; }
+
+.wallName{ padding-left: 20px; font-size: 14px; font-weight: 400;font-style: normal; }
+i{ font-family: 'FontAwesome Regular', 'FontAwesome'; font-style: normal;}
+.icons{ float: right; position: relative;height: 42px; padding-right: 15px;}
+.icons i{ display: inline-block; font-size: 14px; padding: 0 10px; cursor: pointer; color: #959595; }
+.zgl{ padding-top: 40px; text-align: center;}
+.redcenterText{ text-align: center;    color: #E7393F;font-size: 14px; margin-top:50px;}
+.waletslist{ margin-top:15px }
+.addWallet{     background: none;  border: 1px solid #2A2A2A;color: #E7393F;padding: 13px 20px;font-size: 14px;margin-top: 20px; cursor: pointer}
+.addWallet:hover, .bordered{ border: 1px solid #E7393F; border-radius: 5px;}
+nav.actions{ padding-top: 15px; }
+.actions button{ border: 0; color: #E7393F; height: 42px; line-height: 42px; font-size: 14px; padding: 0 10px; margin-right: 15px; background: #2A2A2A; cursor: pointer; outline: none;}
+.actions button:hover, .actions button.active{background: #404040; }
+.actions button i{ margin: 0 5px }
+.tap{ background: #404040; font-size: 14px;  padding: 22px;}
+.bordered{ height: 42px; line-height: 42px; color: #E7393F; padding: 0 20px;}
+.walletballance{ font-weight: bold;}
+.currencySelect{-webkit-appearance: menulist-button; border-color: rgb(153, 153, 153); color: #E7393F; font-size: 14px; margin-left: 10px;}
+.line{ height: 42px; line-height: 42px; padding: 10px 0; position: relative;}
+/*.qrBg{ float: right; position: relative; height:receiveTab 100%; z-index: 0}*/
+.line label, .line input{ height: 100%; line-height: 42px; font-size: 14px;}
+.line input{ padding: 0 10px; display: inline-block;    border: 0; margin: 0;}
+.line label{ width: 149px; display: inline-block; }
+#raddr{ width: 360px; }
+.btcBg{ position: relative; display: inline-block}
+.btcBg:after{ content:""; color: #E7393F; font-size: 15px;  font-family: 'FontAwesome Regular', 'FontAwesome';position: absolute;  top: 0;right: 6px;}
+i.qr{ position: absolute;    right: 14px;    top: 11px;    z-index: 190;    display: block;    font-size: 20px;    color: #E7393F; cursor: pointer;}
+i.refresh{ color: #959595}
+i.refresh:hover{ color: #E7393F}
+.exchangeText{ position: relative}
+#convertedSumm{ width: 159px;}
+#curExchange{ position: absolute; top: -2px; right: 8px;}
+.wrapMargin{ margin: 10px 0 20px;}
+.smallLine{height: 21px;    line-height: 21px;}
+.strong{ font-weight: bold;}
+button.sendCoins{ margin: 20px 0 0 0; height: 42px; line-height: 42px; text-transform: uppercase; border: 0; border-radius: 5px; background: #E7393F; color: #fff; font-size: 14px; padding: 0 15px; cursor: pointer;}
+.sendCoins i{ margin-right: 10px; font-size: 15px;}
+.receiveTab h4{ margin: 40px 0 5px;}
+.sendLine{ height: 42px; margin: 10px 0; line-height: 42px; box-sizing:border-box; border: 1px solid #404040; padding-left: 10px; position: relative;}
+.sendLine:hover{ border-color: #fff;}
+.sendLine .qrIco{ position: absolute; cursor: pointer; right: 10px;top: 0; font-size: 20px;}
+a.createAdress{text-decoration: none; cursor: pointer; color: #E7393F; margin: 30px 0 10px}
+.heading{ margin: 35px 0 5px;}
+.col1,.tabHead:nth-child(1){ margin-left:10px; width: 80px;}
+.col2,.tabHead:nth-child(2){ width: 226px;}
+.col3,.tabHead:nth-child(3){ width: 118px;}
+.col3,.col4{ font-size: 14px;}
+.tableLine{ height: 30px; padding-top: 20px; font-size: 11px;}
+.tableLine.red{ color: #E7393F;}
+.tableLine.green{ color: #0C0;}
+
