@@ -8,9 +8,12 @@
     <link href="css/font-awesome.css" media="screen" rel="stylesheet">
     <link href="css/bitlox.css" media="screen" rel="stylesheet">
     <link href="img/favicon.ico" id="page_favicon" rel="icon" type="image/x-icon">
-    <script src="js/detectPlugin.js"></script>
+    <!--<script src="js/detectPlugin.js"></script>-->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/angular.min.js"></script>
 </head>
 <body>
+<div class="wrapper" ng-app="wallets" ng-controller="WalletsCtrl">
 <nav class="redMainNav">
     <div class="center">
         <img src="img/bitlox.png" alt="bitlox logo"/><div class="web">web</div>
@@ -35,11 +38,11 @@
             <div class="redcenterText">Select wallet from list</div>
         </div>
         <nav class="actions hide)">
-            <button class="active"><i></i>Send</button>
-            <button><i></i>Receive</button>
-            <button><i></i>Transactions</button>
+            <button class="active" ng-class="{active:tab==1}" ng-click="switchTab(1)"><i></i>Send</button>
+            <button ng-class="{active:tab==2}" ng-click="switchTab(2)"><i></i>Receive</button>
+            <button ng-class="{active:tab==3}" ng-click="switchTab(3)"><i></i>Transactions</button>
         </nav>
-        <div class="tap hide)">
+        <div class="tap">
             <div class="bordered">
                 <strong>Wallet name</strong> (balance)
                 <div class="fr">
@@ -55,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="downpart sendTab hide">
+            <div class="downpart sendTab" ng-show="tab==1">
                 <div class="line">
                     <label for="raddr">Receiver's address</label>
                     <input type="text" id="raddr"/>
@@ -93,7 +96,7 @@
                 <div class="splitline"></div>
                 <button class="sendCoins"><i></i>SEND</button>
             </div>
-            <div class="downpart receiveTab hide">
+            <div class="downpart receiveTab" ng-show="tab==2">
                 <h4>My address</h4>
                 <div class="splitlineWhite"></div>
                 <div class="sendLine">
@@ -109,7 +112,7 @@
                 <a href="#" class=" fr createAdress">+ Create address</a>
                 <i class="clear"></i>
             </div>
-            <div class="downpart transactions hide)">
+            <div class="downpart transactions" ng-show="tab==3">
                 <div class="heading">
                     <span class="tabHead fl">Time</span>
                     <span class="tabHead fl">Address</span>
@@ -197,13 +200,7 @@
         <button class="Save"><i class="save"></i>Save</button>
     </div>
 </div>
-
-<iframe id="invisible" style="display:none;"></iframe>
-<script type="text/javascript">
-function getFile(apple) {
-    var iframe = document.getElementById('invisible');
-    iframe.src = apple?"files/bitlox_plugin.dmg":"files/hidapiBrowserPlugin.msi";
-}
-</script>
+</div>
+<script src="js/wallets.js"></script>
 </body>
 </html>

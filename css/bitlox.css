@@ -63,11 +63,11 @@ nav.actions{ padding-top: 15px; }
 .btcBg{ position: relative; display: inline-block}
 .btcBg:after{ content:""; color: #E7393F; font-size: 15px;  font-family: 'FontAwesome Regular', 'FontAwesome';position: absolute;  top: 0;right: 6px;}
 i.qr{ position: absolute;    right: 14px;    top: 11px;    z-index: 190;    display: block;    font-size: 20px;    color: #E7393F; cursor: pointer;}
-i.refresh{ color: #959595}
+i.refresh{ color: #959595; cursor:pointer}
 i.refresh:hover{ color: #E7393F}
 .exchangeText{ position: relative}
 #convertedSumm{ width: 159px;}
-#curExchange{ position: absolute; top: -2px; right: 8px;}
+#curExchange{ position: absolute; top: -3px; right: 8px;}
 .wrapMargin{ margin: 10px 0 20px;}
 .smallLine{height: 21px;    line-height: 21px;}
 .strong{ font-weight: bold;}
