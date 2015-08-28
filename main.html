@@ -12,6 +12,7 @@
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/qrcode.min.js"></script>
+    <script src="js/html5-qrcode.min.js"></script>
 </head>
 <body>
 <div class="wrapper" ng-app="wallets" ng-controller="WalletsCtrl">
@@ -51,13 +52,6 @@
                         <i class="refresh"></i>
                         <span class="walletballance">12.0012521</span>
                         <span class="exchangeText"><span id="total"></span> BTC
-                            <!--<select name="currency" class="currencySelect">
-                                <option selected="selected" value="BTC">BTC</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
-                                <option value="RUB">RUB</option>
-                                <option value="GBP">GBP</option>
-                            </select>-->
                         </span>
                     </div>
                 </div>
@@ -75,29 +69,21 @@
                     </div>-->
                     <div class="line">
                         <label for="raddrTo">Send to</label>
-                        <input type="text" id="raddrTo"/>
-                        <i class="qr"></i>
+                        <input type="text" id="raddrTo" ng-model="raddrTo"/>
+                        <i class="qr" ng-click="showScanPopUp()"></i>
                     </div>
                     <div class="line">
                         <label for="amount" >Amount</label>
                         <span class="btcBg">
-                            <input type="text" id="amount" ng-mondel="amount" ng-model-options="{ updateOn: 'blur' }" ng-keyup="cancel( $event )"/>
-                            <!-- ng-change="calcUSD()" -->
+                            <input type="text" id="amount" ng-blur="calcUSD($event)" />
+
+                            <!-- ng-change="calcUSD()" ng-mondel="amount" ng-model-options="{updateOn: 'blur'}" -->
                         </span>
                         =
                         <span class="exchangeText">
                             <span id="convertedSumm">
-                                <span id="usdConvert">255.00</span> USD
+                                <span id="usdConvert">{{amount}}</span>
                             </span>
-                            <!--<input type="text" />-->
-
-                            <!--<select name="currency" class="currencySelect" id="curExchange">
-                                <option selected="selected" value="BTC">BTC</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
-                                <option value="RUB">RUB</option>
-                                <option value="GBP">GBP</option>
-                            </select>-->
                         </span>
                     </div>
                     <div class="wrapMargin">
@@ -182,8 +168,9 @@
         <div class="fr">Safest, wireless, powered!</div>
     </div>
 </footer>
+
 <!-- popUps -->
-<div class="popup qrPopUp hide)" ng-show="shQr">
+<div class="popup qrPopUp" ng-show="shQr">
     <div class="shade" ng-click="closeQrPupUp()"></div>
     <div class="wrap">
         <div id="qrcode"></div>
@@ -194,15 +181,16 @@
     </div>
 </div>
 
-<div class="popup qrCam hide">
-    <div class="shade"></div>
-    <div class="wrap">
-        <div id="camplace"></div>
+<div class="popup qrCam" ng-show="scan">
+    <div class="shade" ng-click="closeQrPupUp()"></div>
+    <div class="wrap scan">
+        <div id="camplace"> </div>
         <div class="camtext">Hold a picture of the QR code <br/>up to your computer’s web cam</div>
+        <i ng-click="closeQrPupUp()" class="closePopUp"></i>
     </div>
 </div>
 
-<div class="popup editWallet hide">
+<div class="popup editWallet hide" >
     <div class="shade"></div>
     <div class="wrap">
         <h3>Edit wallet</h3>
