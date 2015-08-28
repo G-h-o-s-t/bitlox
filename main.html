@@ -11,6 +11,7 @@
     <!--<script src="js/detectPlugin.js"></script>-->
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
 </head>
 <body>
 <div class="wrapper" ng-app="wallets" ng-controller="WalletsCtrl">
@@ -37,114 +38,134 @@
             <img src="img/u35.png" alt="select wallet from list"/>
             <div class="redcenterText">Select wallet from list</div>
         </div>
-        <nav class="actions hide)">
-            <button class="active" ng-class="{active:tab==1}" ng-click="switchTab(1)"><i></i>Send</button>
-            <button ng-class="{active:tab==2}" ng-click="switchTab(2)"><i></i>Receive</button>
-            <button ng-class="{active:tab==3}" ng-click="switchTab(3)"><i></i>Transactions</button>
-        </nav>
-        <div class="tap">
-            <div class="bordered">
-                <strong>Wallet name</strong> (balance)
-                <div class="fr">
-                    <i class="refresh"></i>
-                    <span class="walletballance">12.0012521</span>
-                    <select name="currency" class="currencySelect">
-                        <option selected="selected" value="BTC">BTC</option>
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="RUB">RUB</option>
-                        <option value="GBP">GBP</option>
-                    </select>
+        <div class="wrapActions hide)">
+            <nav class="actions hide)">
+                <button class="active" ng-class="{active:tab==1}" ng-click="switchTab(1)"><i></i>Send</button>
+                <button ng-class="{active:tab==2}" ng-click="switchTab(2)"><i></i>Receive</button>
+                <button ng-class="{active:tab==3}" ng-click="switchTab(3)"><i></i>Transactions</button>
+            </nav>
+            <div class="tap">
+                <div class="bordered">
+                    <strong>Wallet name</strong> (balance)
+                    <div class="fr">
+                        <i class="refresh"></i>
+                        <span class="walletballance">12.0012521</span>
+                        <span class="exchangeText">
+                            <select name="currency" class="currencySelect">
+                                <option selected="selected" value="BTC">BTC</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="RUB">RUB</option>
+                                <option value="GBP">GBP</option>
+                            </select>
+                        </span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="downpart sendTab" ng-show="tab==1">
-                <div class="line">
-                    <label for="raddr">Receiver's address</label>
-                    <input type="text" id="raddr"/>
-                    <i class="qr"></i>
-                </div>
-                <div class="line">
-                    <label for="amount">Amount</label>
-                    <span class="btcBg">
-                        <input type="text" id="amount"/>
-                    </span>
-                    =
-                    <span class="exchangeText">
-                        <input type="text" id="convertedSumm"/>
-                        <select name="currency" class="currencySelect" id="curExchange">
-                            <option selected="selected" value="BTC">BTC</option>
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="RUB">RUB</option>
-                            <option value="GBP">GBP</option>
+                <div class="downpart sendTab" ng-show="tab==1">
+                    <div class="line">
+                        <label for="raddrFrom">From address</label>
+                        <select name="addressSelect" class="addressSelect" id="raddrFrom">
+                            <option selected="selected" value="1YtcSjJiZwSTZw2xJxv4wWe4d7bvZDG4q">1YtcSjJiZwSTZw2xJxv4wWe4d7bvZDG4q (0)</option>
+                            <option value="1HPMGYDAA55cXGpM8ApVy6VhrhuSSFYfuH">1HPMGYDAA55cXGpM8ApVy6VhrhuSSFYfuH (0.002)</option>
+                            <option value="1Phe2LcmVS8H1NU6GYrChzsNZwk4j8vZkQ">1Phe2LcmVS8H1NU6GYrChzsNZwk4j8vZkQ (0.010)</option>
+                            <option value="5JxaSF4DE3TE8M8GjahPt8mGnmdo9QfSs6kpM">5JxaSF4DE3TE8M8GjahPt8mGnmdo9QfSs6kpM (0.012)</option>
                         </select>
-                    </span>
-                </div>
-                <div class="wrapMargin">
-                    <div class="smallLine">
-                        <span class="fl">Transaction fee (0.5%)</span>
-                        <span class="fr">0.00001 BTC ($ 0.1)</span>
-                        <i class="clear"></i>
-                    </div>
-                    <div class="smallLine">
-                        <span class="fl strong">Total</span>
-                        <span class="fr strong">0.00011 BTC ($ 11)</span>
-                        <i class="clear"></i>
-                    </div>
-                </div>
-                <div class="splitline"></div>
-                <button class="sendCoins"><i></i>SEND</button>
-            </div>
-            <div class="downpart receiveTab" ng-show="tab==2">
-                <h4>My address</h4>
-                <div class="splitlineWhite"></div>
-                <div class="sendLine">
-                    <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span><i class="qrIco"></i>
-                </div>
-                <div class="sendLine">
-                    <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span><i class="qrIco"></i>
-                </div>
-                <div class="sendLine">
-                    <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span><i class="qrIco"></i>
-                </div>
-                <div class="splitlineWhite"></div>
-                <a href="#" class=" fr createAdress">+ Create address</a>
-                <i class="clear"></i>
-            </div>
-            <div class="downpart transactions" ng-show="tab==3">
-                <div class="heading">
-                    <span class="tabHead fl">Time</span>
-                    <span class="tabHead fl">Address</span>
-                    <span class="tabHead fl">Amount</span>
-                    <span class="tabHead fl">Balance</span>
-                    <i class="clear"></i>
-                </div>
-                <div class="splitlineWhite"></div>
-                <div class="tableLine red">
-                    <span class="col1 fl">2015-07-03 21:43:50</span>
-                    <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
-                    <span class="col3 fl">-0.0000012</span>
-                    <span class="col4 fl">1.0000012</span>
-                    <i class="clear"></i>
-                </div>
-                <div class="tableLine green">
-                    <span class="col1 fl">2015-07-03 21:43:50</span>
-                    <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
-                    <span class="col3 fl">-0.0000012</span>
-                    <span class="col4 fl">1.0000012</span>
-                    <i class="clear"></i>
-                </div>
-                <div class="tableLine red">
-                    <span class="col1 fl">2015-07-03 21:43:50</span>
-                    <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
-                    <span class="col3 fl">-0.0000012</span>
-                    <span class="col4 fl">1.0000012</span>
-                    <i class="clear"></i>
-                </div>
 
-                <!--<button class="createAdress">+ Create address</button>-->
-                <i class="clear"></i>
+                    </div>
+                    <div class="line">
+                        <label for="raddrTo">Send to</label>
+                        <input type="text" id="raddrTo"/>
+                        <i class="qr"></i>
+                    </div>
+                    <div class="line">
+                        <label for="amount">Amount</label>
+                        <span class="btcBg">
+                            <input type="text" id="amount"/>
+                        </span>
+                        =
+                        <span class="exchangeText">
+                            <input type="text" id="convertedSumm"/>
+                            <select name="currency" class="currencySelect" id="curExchange">
+                                <option selected="selected" value="BTC">BTC</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="RUB">RUB</option>
+                                <option value="GBP">GBP</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="wrapMargin">
+                        <div class="smallLine">
+                            <span class="fl">Transaction fee </span>
+                            <span class="fr">0.0001 BTC</span>
+                            <i class="clear"></i>
+                        </div>
+                        <div class="smallLine">
+                            <span class="fl strong">Total</span>
+                            <span class="fr strong">0.00011 BTC ($ 11)</span>
+                            <i class="clear"></i>
+                        </div>
+                    </div>
+                    <div class="splitline"></div>
+                    <button class="sendCoins"><i></i>SEND</button>
+                </div>
+                <div class="downpart receiveTab" ng-show="tab==2">
+                    <h4>My address</h4>
+                    <div class="splitlineWhite"></div>
+                    <div class="sendLine">
+                        <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span><i class="qrIco" ng-click="showQrPopUp('1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee')"></i>
+                    </div>
+                    <div class="sendLine">
+                        <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4e1</span><i class="qrIco" ng-click="showQrPopUp('1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4e2')"></i>
+                    </div>
+                    <div class="sendLine">
+                        <span class="walletName">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4e2</span><i class="qrIco" ng-click="showQrPopUp('1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4e1')"></i>
+                    </div>
+                    <div class="splitlineWhite"></div>
+                    <a href="#" class=" fr createAdress">+ Create address</a>
+                    <i class="clear"></i>
+                </div>
+                <div class="downpart transactions" ng-show="tab==3">
+                    <div class="heading">
+                        <span class="tabHead fl">Time</span>
+                        <span class="tabHead fl">Address</span>
+                        <span class="tabHead fl">Amount</span>
+                        <span class="tabHead fl">Balance</span>
+                        <i class="clear"></i>
+                    </div>
+                    <div class="splitlineWhite"></div>
+                    <div class="tableLine red">
+                        <span class="col1 fl">2015-07-03 21:43:50</span>
+                        <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
+                        <span class="col3 fl">-0.0000012</span>
+                        <span class="col4 fl">1.0000012</span>
+                        <i class="clear"></i>
+                    </div>
+                    <div class="tableLine green">
+                        <span class="col1 fl">2015-07-03 21:43:50</span>
+                        <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
+                        <span class="col3 fl">-0.0000012</span>
+                        <span class="col4 fl">1.0000012</span>
+                        <i class="clear"></i>
+                    </div>
+                    <div class="tableLine red">
+                        <span class="col1 fl">2015-07-03 21:43:50</span>
+                        <span class="col2 fl">1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
+                        <span class="col3 fl">-0.0000012</span>
+                        <span class="col4 fl">1.0000012</span>
+                        <i class="clear"></i>
+                    </div>
+
+                    <!--<button class="createAdress">+ Create address</button>-->
+                    <i class="clear"></i>
+                </div>
+            </div>
+        </div>
+        <div class="enterPin hide">
+            <img src="img/enterPin.png" alt="enter bitlox pin"/>
+            <div class="pinEnterDescr">
+                Enter PIN on your Bitlox device.
             </div>
         </div>
     </div>
@@ -157,13 +178,14 @@
     </div>
 </footer>
 <!-- popUps -->
-<div class="popup qrPopUp hide">
-    <div class="shade"></div>
+<div class="popup qrPopUp hide)" ng-show="shQr">
+    <div class="shade" ng-click="closeQrPupUp()"></div>
     <div class="wrap">
-        <img id="u102_img" class="img " src="http://d2v8ggac1o0f6z.cloudfront.net/gsc/6PYWIN/2e/25/f7/2e25f748ee0c4558b73519b792a6bc81/images/home/u102.png?token=ea462e936ff591b4465f1b700b84306c">
+        <div id="qrcode"></div>
         <div>
-            <input type="text" class="qrLink" value="http://dxlfb468n8ekd.cloudfront.net/gsc/6PYWIN/2e/25/f7/2e25f748ee0c4558b73519b792a6bc81/http:\\www.bitlox.io\username\link2qrcode.png?token=2cd2bdb80d674db6f01fedc1da7fbe52"/>
+            <input type="text" class="qrLink" value="{{qr}}"/>
         </div>
+        <i ng-click="closeQrPupUp()" class="closePopUp"></i>
     </div>
 </div>
 

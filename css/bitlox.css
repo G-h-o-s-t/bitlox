@@ -53,20 +53,21 @@ nav.actions{ padding-top: 15px; }
 .tap{ background: #404040; font-size: 14px;  padding: 22px;}
 .bordered{ height: 42px; line-height: 42px; color: #E7393F; padding: 0 20px;}
 .walletballance{ font-weight: bold;}
-.currencySelect{-webkit-appearance: menulist-button; border-color: rgb(153, 153, 153); color: #E7393F; font-size: 14px; margin-left: 10px;}
+.addressSelect, .currencySelect{-webkit-appearance: menulist-button; border-color: rgb(153, 153, 153); color: #E7393F; font-size: 14px; margin-left: 10px; outline:none;}
 .line{ height: 42px; line-height: 42px; padding: 10px 0; position: relative;}
 /*.qrBg{ float: right; position: relative; height:receiveTab 100%; z-index: 0}*/
 .line label, .line input{ height: 100%; line-height: 42px; font-size: 14px;}
 .line input{ padding: 0 10px; display: inline-block;    border: 0; margin: 0;}
 .line label{ width: 149px; display: inline-block; }
-#raddr{ width: 360px; }
+#raddrTo{ width: 360px; }
+#raddrFrom{ width: 381px;margin-left: 0; }
 .btcBg{ position: relative; display: inline-block}
 .btcBg:after{ content:""; color: #E7393F; font-size: 15px;  font-family: 'FontAwesome Regular', 'FontAwesome';position: absolute;  top: 0;right: 6px;}
 i.qr{ position: absolute;    right: 14px;    top: 11px;    z-index: 190;    display: block;    font-size: 20px;    color: #E7393F; cursor: pointer;}
 i.refresh{ color: #959595; cursor:pointer}
 i.refresh:hover{ color: #E7393F}
 .exchangeText{ position: relative}
-#convertedSumm{ width: 159px;}
+#convertedSumm{ width: 163px;}
 #curExchange{ position: absolute; top: -3px; right: 8px;}
 .wrapMargin{ margin: 10px 0 20px;}
 .smallLine{height: 21px;    line-height: 21px;}
@@ -83,7 +84,27 @@ a.createAdress{text-decoration: none; cursor: pointer; color: #E7393F; margin: 3
 .col2,.tabHead:nth-child(2){ width: 226px;}
 .col3,.tabHead:nth-child(3){ width: 118px;}
 .col3,.col4{ font-size: 14px;}
-.tableLine{ height: 30px; padding-top: 20px; font-size: 11px;}
-.tableLine.red{ color: #E7393F;}
-.tableLine.green{ color: #0C0;}
+.tableLine{ height: 30px; padding-top: 20px; font-size: 11px; }
+.tableLine.red{ color: #E7393F; }
+.tableLine.green{ color: #0C0; }
+.enterPin{ text-align: center; margin-top:40px; }
+.pinEnterDescr{ font-size: 14px; color: #E7393F; margin-top: 20px}
 
+/* popups */
+.popup{ width: 100%; height: 100%; position: fixed; top:0; left: 0; }
+.shade{ width: 100%; height: 100%; position: fixed; background: #fff; opacity: 0.8; top:0; left: 0;}
+.popup .wrap{ width: 400px; height: 442px; position: absolute; top:60px; left:50%; margin: 0 0 0 -200px; border-radius:10px; background: #fff; padding: 20px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 31px 0px rgba(231,57,63,0.5);
+    -moz-box-shadow: 0px 0px 31px 0px rgba(231,57,63,0.5);
+    box-shadow: 0px 0px 31px 0px rgba(231,57,63,0.5);
+}
+.closePopUp{ background: #fff; position: absolute; top:-20px; right:-20px; font-size: 20px; display: block;  color: #E7393F; cursor: pointer; background: none;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 31px 0px rgba(231,57,63,0.5);
+    -moz-box-shadow: 0px 0px 31px 0px rgba(231,57,63,0.5);
+    box-shadow: 0px 0px 31px 0px rgba(231,57,63,0.5);
+    border-radius: 10px;
+}
+#qrcode{ margin: 27px auto;width:280px; height:280px; }
+.qrLink{ width: 100%; margin-top:20px; line-height: 42px; font-size: 18px; }
