@@ -63,11 +63,11 @@ nav.actions{ padding-top: 15px; }
 #raddrFrom{ width: 381px;margin-left: 0; }
 .btcBg{ position: relative; display: inline-block}
 .btcBg:after{ content:""; color: #E7393F; font-size: 15px;  font-family: 'FontAwesome Regular', 'FontAwesome';position: absolute;  top: 0;right: 6px;}
-i.qr{ position: absolute;    right: 14px;    top: 11px;    z-index: 190;    display: block;    font-size: 20px;    color: #E7393F; cursor: pointer;}
+i.qr{ position: absolute;    right: 18px;    top: 11px;    z-index: 190;    display: block;    font-size: 20px;    color: #E7393F; cursor: pointer;}
 i.refresh{ color: #959595; cursor:pointer}
 i.refresh:hover{ color: #E7393F}
-.exchangeText{ position: relative}
-#convertedSumm{ width: 163px;}
+.exchangeText{ position: relative;}
+#convertedSumm{ width: 163px;background: #fff; line-height: 42px; display: inline-block; text-align: right; color: #E7393F; padding-right: 15px; }
 #curExchange{ position: absolute; top: -3px; right: 8px;}
 .wrapMargin{ margin: 10px 0 20px;}
 .smallLine{height: 21px;    line-height: 21px;}

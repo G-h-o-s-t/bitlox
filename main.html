@@ -50,20 +50,20 @@
                     <div class="fr">
                         <i class="refresh"></i>
                         <span class="walletballance">12.0012521</span>
-                        <span class="exchangeText">
-                            <select name="currency" class="currencySelect">
+                        <span class="exchangeText"><span id="total"></span> BTC
+                            <!--<select name="currency" class="currencySelect">
                                 <option selected="selected" value="BTC">BTC</option>
                                 <option value="USD">USD</option>
                                 <option value="EUR">EUR</option>
                                 <option value="RUB">RUB</option>
                                 <option value="GBP">GBP</option>
-                            </select>
+                            </select>-->
                         </span>
                     </div>
                 </div>
 
                 <div class="downpart sendTab" ng-show="tab==1">
-                    <div class="line">
+<!--                    <div class="line">
                         <label for="raddrFrom">From address</label>
                         <select name="addressSelect" class="addressSelect" id="raddrFrom">
                             <option selected="selected" value="1YtcSjJiZwSTZw2xJxv4wWe4d7bvZDG4q">1YtcSjJiZwSTZw2xJxv4wWe4d7bvZDG4q (0)</option>
@@ -72,27 +72,32 @@
                             <option value="5JxaSF4DE3TE8M8GjahPt8mGnmdo9QfSs6kpM">5JxaSF4DE3TE8M8GjahPt8mGnmdo9QfSs6kpM (0.012)</option>
                         </select>
 
-                    </div>
+                    </div>-->
                     <div class="line">
                         <label for="raddrTo">Send to</label>
                         <input type="text" id="raddrTo"/>
                         <i class="qr"></i>
                     </div>
                     <div class="line">
-                        <label for="amount">Amount</label>
+                        <label for="amount" >Amount</label>
                         <span class="btcBg">
-                            <input type="text" id="amount"/>
+                            <input type="text" id="amount" ng-mondel="amount" ng-model-options="{ updateOn: 'blur' }" ng-keyup="cancel( $event )"/>
+                            <!-- ng-change="calcUSD()" -->
                         </span>
                         =
                         <span class="exchangeText">
-                            <input type="text" id="convertedSumm"/>
-                            <select name="currency" class="currencySelect" id="curExchange">
+                            <span id="convertedSumm">
+                                <span id="usdConvert">255.00</span> USD
+                            </span>
+                            <!--<input type="text" />-->
+
+                            <!--<select name="currency" class="currencySelect" id="curExchange">
                                 <option selected="selected" value="BTC">BTC</option>
                                 <option value="USD">USD</option>
                                 <option value="EUR">EUR</option>
                                 <option value="RUB">RUB</option>
                                 <option value="GBP">GBP</option>
-                            </select>
+                            </select>-->
                         </span>
                     </div>
                     <div class="wrapMargin">
